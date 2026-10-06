@@ -7,10 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "check": "node scripts/check.mjs",
+    "check": "node scripts/check.mjs && npm run check:agent",
+    "check:agent": "node --test tests/*.test.js",
+    "server": "node server/index.js",
+    "server:dev": "node --watch server/index.js",
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
